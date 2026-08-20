@@ -1,0 +1,37 @@
+---
+import Logo from "./logo.astro";
+import Button from "../components/button.astro";
+---
+
+<header>
+  <Logo />
+  <div class="action-wrapper">
+    <Button label="EXPLORE WORKS" btnClasses="btn btn-primary" />
+    <Button label="INITIATE TEAM-UP" btnClasses="btn btn-secondary" />
+  </div>
+</header>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--text-color-32);
+  }
+
+  @media screen and (max-width: 40rem) {
+    header {
+      justify-content: center;
+
+      nav {
+        display: none;
+      }
+    }
+  }
+</style>

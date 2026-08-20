@@ -1,0 +1,192 @@
+@use "./variables" as *;
+@use "./mixin" as *;
+
+:root {
+  --primary-color: #dd3603;
+  --text-color: #1a1a1a;
+  --white-text-color: #ffffff;
+  --text-color-80: hsla(0, 0%, 10%, 0.8);
+  --text-color-64: hsla(0, 0%, 10%, 0.64);
+  --text-color-32: hsla(0, 0%, 10%, 0.32);
+  --text-color-16: hsla(0, 0%, 10%, 0.16);
+  --text-color-8: hsla(0, 0%, 10%, 0.08);
+  --text-color-4: hsla(0, 0%, 10%, 0.04);
+  --bg-color: #fbf9f6;
+  --card-bg-color: #f5f2ec;
+  --green-color: hsl(144, 100%, 39%);
+  --green-color-16: hsla(144, 100%, 39%, 0.16);
+
+  --headingFont: SpecialFont, sans-serif;
+  --specialFont: HeadingFont, sans-serif;
+  --regularFont: RegularFont, sans-serif;
+  --lightFont: LightFont, sans-serif;
+  --mediumFont: MediumFont, sans-serif;
+  --semiFont: SemiFont, sans-serif;
+  --boldFont: BoldFont, sans-serif;
+  --blackFont: BlackFont, sans-serif;
+  --extraBoldFont: ExtraBoldFont, sans-serif;
+  --extraLightFont: ExtraLightFont, sans-serif;
+  --thinFont: ThinFont, sans-serif;
+
+  --font-12: 0.75rem;
+  --font-14: 0.875rem;
+  --font-16: 1rem;
+  --font-18: 1.125rem;
+  --font-20: 1.25rem;
+  --font-24: 1.5rem;
+  --font-28: 1.75rem;
+  --font-32: 2rem;
+  --font-40: 2.5rem;
+  --font-48: 3rem;
+  --font-56: 3.5rem;
+  --font-64: 4rem;
+
+  --rd-4: 0.25rem;
+  --rd-8: 0.5rem;
+  --rd-12: 0.75rem;
+  --rd-16: 1rem;
+  --rd-24: 1.5rem;
+  --rd-32: 2rem;
+
+  --transition: all 0.3s ease;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--regularFont);
+  font-size: var(--font-16);
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p,
+.para {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+i,
+em {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: var(--primaryClr);
+}
+b,
+strong {
+  font-weight: bolder;
+}
+.small,
+small {
+  font-size: var(--font-12);
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"],
+ul[role="menu"],
+ol[role="menu"],
+ul[role="menubar"],
+ol[role="menubar"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+img,
+picture,
+svg {
+  vertical-align: middle;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  text-transform: capitalize;
+}
+button,
+[role="button"] {
+  cursor: pointer;
+}
+select {
+  word-wrap: normal;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  :root {
+    --font-12: 0.625rem;
+    --font-14: 0.75rem;
+    --font-16: 0.875rem;
+    --font-18: 1rem;
+    --font-20: 1.125rem;
+    --font-24: 1.25rem;
+    --font-28: 1.5rem;
+    --font-32: 1.75rem;
+    --font-40: 2.25rem;
+    --font-48: 2.5rem;
+    --font-56: 3rem;
+    --font-64: 3.5rem;
+  }
+}

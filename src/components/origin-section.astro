@@ -1,0 +1,77 @@
+---
+import AwardCard from "../components/award-card.astro";
+---
+
+<div class="origin-section">
+  <div class="origin-content">
+    <h3>Bridging the Gap Between Pixel and Production.</h3>
+    <div class="origin-descriptions">
+      <p class="para">
+        Design is not just visual—it is structural. Over the last decade, I've
+        learned that the most effective products are born when design systems
+        speak the same language as the codebase.
+      </p>
+      <p class="para">
+        Currently, as a Senior Lead Designer at Infosys, I lead digital
+        transformation initiatives for global enterprise clients. My approach is
+        rooted in efficiency: I don't just design interfaces; I architect the
+        ecosystems that power them. Whether it's automating design handoffs
+        through custom Figma plugins or building modular React component
+        libraries, my mission is to help teams build faster, stay consistent,
+        and ship with confidence.
+      </p>
+    </div>
+    <h4>Hall of Fame & Recognitions</h4>
+    <div class="award-wrapper">
+      <AwardCard
+        award="Figma Best Business Maker"
+        description="For forging high-impact tooling that accelerates product delivery."
+        imgSrc="../../public/image/pugal-bg.png"
+      />
+      <AwardCard
+        award="RISE Award - Best Innovator"
+        description="For pioneering new tech and methodologies in cross-functional design workflows."
+        imgSrc="../../public/image/pugal-bg.png"
+      />
+      <AwardCard
+        award="Insta Award"
+        description="Recognized without fail for rapid, reliable execution and problem-solving."
+        imgSrc="../../public/image/pugal-bg.png"
+      />
+    </div>
+  </div>
+  <div class="origin-pic">
+    <img src="../../public/image/pugal-bg.png" />
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  .origin-section {
+    @include flex-element;
+    gap: 2rem;
+    align-items: center;
+    padding: 4rem 8rem;
+
+    .origin-content {
+    }
+
+    .origin-pic {
+      min-width: 20rem;
+      width: auto;
+      max-width: 30rem;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0px 0.125rem 0.5rem 0.375rem var(--text-color-8);
+    }
+  }
+
+  .award-wrapper {
+    @include grid-element;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+</style>

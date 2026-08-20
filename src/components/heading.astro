@@ -1,0 +1,45 @@
+---
+interface Props {
+  count: string;
+  heading: string;
+}
+
+const { count, heading } = Astro.props;
+---
+
+<div class="section-heading"><span>{count}</span>{heading}</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  .section-heading {
+    @include rel-position;
+    @include flex-element;
+    gap: 0.75rem;
+    align-items: center;
+
+    font-size: var(--font-12);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-family: var(--specialFont);
+
+    span {
+      color: var(--text-color);
+      font-family: var(--lightFont);
+    }
+
+    &::after {
+      content: "";
+      @include rel-position;
+      width: 4rem;
+      height: 0.125rem;
+      background: linear-gradient(
+        to right,
+        var(--primary-color),
+        var(--text-color-4)
+      );
+    }
+  }
+</style>

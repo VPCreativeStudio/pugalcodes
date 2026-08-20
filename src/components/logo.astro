@@ -1,0 +1,77 @@
+<div class="logo">
+  <i class="logo-svg">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+    >
+      <g clip-path="url(#clip0_508_19)">
+        <mask
+          id="mask0_508_19"
+          style="mask-type:luminance"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="32"
+          height="32"
+        >
+          <path d="M32 0H0V32H32V0Z" fill="white"></path>
+        </mask>
+        <g mask="url(#mask0_508_19)">
+          <mask
+            id="mask1_508_19"
+            style="mask-type:luminance"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="32"
+            height="32"
+          >
+            <path d="M32 0H0V32H32V0Z" fill="white"></path>
+          </mask>
+          <g mask="url(#mask1_508_19)">
+            <path
+              d="M0 3.99414L13.9818 28.1248H18.0845L31.9578 3.99414H27.9631L16.0333 24.3995L4.04934 3.99414H0Z"
+              fill="#DD3603"></path>
+            <path
+              d="M5.5625 3.99414H18.1941L15.9305 7.93414H7.82605L5.5625 3.99414Z"
+              fill="#DD3603"></path>
+            <path
+              d="M19.8662 3.99414H23.5946L16.0911 17.3275H11.9844L19.8662 3.99414Z"
+              fill="#DD3603"></path>
+          </g>
+        </g>
+      </g>
+      <defs>
+        <clipPath id="clip0_508_19">
+          <rect width="32" height="32" fill="white"></rect>
+        </clipPath>
+      </defs>
+    </svg>
+  </i>
+  <span class="logo-text">Codes</span>
+</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  .logo {
+    @include flex-element;
+    gap: 0.5rem;
+    align-items: center;
+
+    .logo-svg {
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-family: var(--semiFont);
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+  }
+</style>

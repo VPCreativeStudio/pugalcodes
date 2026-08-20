@@ -1,0 +1,26 @@
+---
+interface Props {
+  skill: string;
+  expertise: string;
+  chips: string[] | string;
+}
+
+const { skill, expertise, chips } = Astro.props;
+const chipList = Array.isArray(chips)
+  ? chips
+  : chips.split(",").map((chip) => chip.trim());
+---
+
+<div class="skill-card">
+  <h4>{skill}</h4>
+  <p>{expertise}</p>
+  <div class="skill-container">
+    {chipList.map((chip) => <span class="chip">{chip}</span>)}
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+</style>

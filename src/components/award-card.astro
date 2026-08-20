@@ -1,0 +1,44 @@
+---
+interface Props {
+  award: string;
+  description: string;
+  imgSrc: string;
+}
+
+const { award, description, imgSrc } = Astro.props;
+---
+
+<div class="award-card">
+  <h5>{award}</h5>
+  <span>{description}</span>
+  <div class="award-image">
+    <img src={imgSrc} alt="Award" />
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  .award-card {
+    height: 8rem;
+    overflow: hidden;
+
+    h5 {
+      font-size: var(--font-16);
+      font-family: var(--mediumFont);
+    }
+
+    span {
+      font-size: var(--font-14);
+      font-family: var(--lightFont);
+    }
+
+    .award-image {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+</style>

@@ -1,11 +1,126 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/header.astro";
+import ManifestoScroll from "../components/manifesto-scroll.astro";
+import Heading from "../components/heading.astro";
+import OriginSection from "../components/origin-section.astro";
+import CoreSection from "../components/coretech.astro";
+import SelectedWorks from "../components/selected-work.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+
+import HeroSection from "../components/hero-section.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <main>
+    <section class="hero">
+      <HeroSection />
+    </section>
+    <section class="manifesto">
+      <ManifestoScroll />
+      <Heading count="01" heading="THE ORIGIN" />
+      <OriginSection />
+    </section>
+    <section class="coretech">
+      <Heading count="02" heading="Capabilities" />
+      <CoreSection />
+    </section>
+    <section class="work">
+      <Heading count="03" heading="SELECTED WORKS" />
+      <SelectedWorks />
+    </section>
+    <section class="footer">
+      <Heading count="04" heading="Collaboration" />
+      <div class="footer-section">
+        <h3>Let's build a <span>future</span> together.</h3>
+        <div class="footer-contact">
+          <div class="contact-btn">
+            <i class="icon contact-icon"></i>
+            <div class="contact-info">
+              <h6>Start a Project</h6>
+              <span>We are currently available</span>
+            </div>
+          </div>
+        </div>
+        <div class="site-contact">
+          <p class="footer-heading">SITEMAP</p>
+          <div class="footer-nav">
+            <nav>
+              <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+                <li><a href="#coretech">Capabilities</a></li>
+                <li><a href="#work">Selected Works</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="social-contact">
+          <span
+            >I'm not a Social Person so contact me in <a
+              href="mailto:hello@pugalv.com"
+              target="_blank">hello@pugalv.com</a
+            ></span
+          >
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+<footer>
+  <span>© 2026 VP Studio.</span>
+  <span>Designed & Developed By Pugal V</span>
+</footer>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  main {
+    @include rel-position;
+    min-height: 100vh;
+
+    section {
+      padding: 4rem 8rem;
+      height: 100vh;
+
+      &.hero {
+        @include flex-element;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      &.manifesto {
+        padding: 0;
+        background-color: var(--card-bg-color);
+      }
+
+      &.coretech,
+      &.footer {
+        background-color: var(--text-color);
+        color: var(--white-text-color);
+      }
+    }
+  }
+
+  footer {
+    background-color: var(--text-color);
+    color: var(--white-text-color);
+    @include flex-element;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    font-size: var(--font-12);
+  }
+
+  @media screen and (max-width: 40rem) {
+    section {
+      padding: 2rem 4rem;
+      height: 100%;
+    }
+  }
+</style>

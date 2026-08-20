@@ -1,0 +1,51 @@
+@use "./variables" as *;
+@use "./mixin" as *;
+@use "./root" as *;
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--fontRegular);
+  font-size: var(--ft-16);
+  line-height: calc(var(--ft-16) * 1.4);
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--primary-color);
+}
+
+.icon {
+  @include flex-element;
+  @include transform-origin(center);
+  transition: var(--transition);
+
+  &::before {
+    content: "";
+    @include inline-block-element;
+    transition: var(--transition);
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+  }
+}

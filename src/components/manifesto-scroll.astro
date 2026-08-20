@@ -1,0 +1,32 @@
+<div class="manifesto-skill">
+  <div class="skill-item">Web Development</div>
+  <div class="skill-item">UI/UX Design</div>
+  <div class="skill-item">Figma Plugin Development</div>
+  <div class="skill-item">Web Flow</div>
+  <div class="skill-item">Branding</div>
+</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  .manifesto-skill {
+    @include flex-element;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0.5rem 4rem;
+    background-color: var(--primary-color);
+
+    .skill-item {
+      font-size: var(--font-16);
+      font-family: var(--semiFont);
+      text-transform: uppercase;
+      letter-spacing: 0.25rem;
+      color: var(--white-text-color);
+    }
+  }
+</style>

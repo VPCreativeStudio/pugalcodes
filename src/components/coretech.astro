@@ -1,0 +1,68 @@
+---
+import SkillCard from "../components/skill-card.astro";
+---
+
+<div class="core-section">
+  <div class="core-content">
+    <h3>My Toolkit: Where Design Meets Code.</h3>
+    <div class="core-descriptions">
+      <p class="para">
+        I operate at the intersection of UI/UX, system architecture, and plugin
+        engineering.
+      </p>
+    </div>
+    <div class="core-expertise-wrapper">
+      <SkillCard
+        skill="Design Systems"
+        expertise="Scalable architecture, token management, documentation."
+        chips={["Figma", "Tokens Studio", "Storybook"]}
+      />
+      <SkillCard
+        skill="Figma Plugins"
+        expertise="Workflow automation, design-to-code syncing, productivity tools."
+        chips={["TypeScript", "Figma API", "React"]}
+      />
+      <SkillCard
+        skill="UI/UX Design"
+        expertise="Enterprise-grade interfaces, user research, wireframing."
+        chips={["Adobe Creative Suite", "Figma"]}
+      />
+      <SkillCard
+        skill="Web Development"
+        expertise="Component-driven architecture, responsive web apps."
+        chips={["React", "Next.js", "Tailwind CSS"]}
+      />
+    </div>
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  .origin-section {
+    @include flex-element;
+    gap: 2rem;
+    align-items: center;
+    padding: 4rem 8rem;
+
+    .origin-content {
+    }
+
+    .origin-pic {
+      min-width: 20rem;
+      width: auto;
+      max-width: 30rem;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0px 0.125rem 0.5rem 0.375rem var(--text-color-8);
+    }
+  }
+
+  .award-wrapper {
+    @include grid-element;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+</style>

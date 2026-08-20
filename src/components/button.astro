@@ -1,0 +1,49 @@
+---
+interface Props {
+  label: string;
+  btnClasses: string;
+  iconClasses?: string;
+}
+
+const { label, btnClasses, iconClasses } = Astro.props;
+---
+
+<button class={btnClasses} aria-label={label} title={label}>
+  <i class={iconClasses}></i>
+  {label}
+</button>
+
+<style lang="scss" is:global>
+  @use "../../public/sass/variables" as *;
+  @use "../../public/sass/mixin" as *;
+  @use "../../public/sass/root" as *;
+
+  button {
+    @include rel-position;
+    @include inline-flex-element;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: var(--rd-32);
+    font-size: var(--font-16);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &.btn-primary {
+      background-color: var(--primary-color);
+      color: var(--white-text-color);
+      @include rel-position;
+    }
+
+    &.btn-secondary {
+      background-color: var(--card-bg-color);
+      color: var(--primary-color);
+      @include rel-position;
+    }
+  }
+</style>
